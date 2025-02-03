@@ -24,7 +24,8 @@ async function showTasks() {
         const response = await fetch('/api', {  
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
             }
         });
         const data = await response.json();
