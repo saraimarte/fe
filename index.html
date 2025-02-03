@@ -13,7 +13,7 @@
 
 <script>
 
-//const API_BASE_URL = 'https://be2003.netlify.app/.netlify/functions/api';
+const API_BASE_URL = 'https://be2003.netlify.app/.netlify/functions/api';
 const API_BASE_URL2 = 'https://be2003.netlify.app/api';
 
 const btn = document.querySelector('button');
@@ -21,7 +21,7 @@ const btn = document.querySelector('button');
 btn.addEventListener('click', showTasks);
 async function showTasks() {
     try {
-        const response = await fetch(`${API_BASE_URL2}`, {  
+        const response = await fetch(`${API_BASE_URL}`, {  
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
