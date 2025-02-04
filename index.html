@@ -6,12 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <button>Get Tasks</button>
+    <button id = "hello">Say Hello</button>
+    <button id = "bye">Say Goodbye </button>
+
     <script>
     const API_URL_BOTH = 'https://nodejs-serverless-function-express-nu-wine-51.vercel.app/api/hello';
-    const API_URL_2 = '/api/hello'; //doesnt work
+   // const API_URL_2 = '/api/hello'; //doesnt work
+    const API_URL_PAGE1 = 'https://nodejs-serverless-function-express-nu-wine-51.vercel.app/api/hello';
 
-      document.querySelector('button').addEventListener('click', async () => {
+      document.getElementById('hello').addEventListener('click', async () => {
         try {
           const response = await fetch(API_URL_BOTH);
     
@@ -25,6 +28,22 @@
           console.error('Error:', error);
         }
       });
+
+      document.getElementById('bye').addEventListener('click', async () => {
+        try {
+          const response = await fetch(API_URL_PAGE1);
+    
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+    
+          const data = await response.json();
+          console.log(data);
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      });
+
     </script>
     
 </body>
